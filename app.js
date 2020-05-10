@@ -1,4 +1,5 @@
 const el = document.querySelector(".slider");
+const dots = document.querySelectorAll(".dots span");
 let number = Math.floor(Math.random() * 5) + 1;
 
 function changeSlide() {

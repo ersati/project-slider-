@@ -1,9 +1,26 @@
 .slider {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
+    display: relative;
 }
 
 .slider__img {
     max-width: 80vh;
+}
+
+.dots {
+    display: absolute;
+    left: 50%;
+    bottom: 30px;
+}
+
+.dots span {
+
+    display: inline-block;
+    border-radius: 50%;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+
 }
