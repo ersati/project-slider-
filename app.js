@@ -34,8 +34,17 @@ function changeSlide() {
 let indexInterval = setInterval(changeSlide, time);
 
 const clickSlideChange = (e) => {
-  if (e.target == sliderLeftArrow) {
-    console.log(e.target);
+  if (e.target == sliderLeftArrow || e.target == sliderRightArrow) {
+    clearInterval(indexInterval);
+    e.target == sliderLeftArrow ? number-- : number++;
+    if (number === slideList.length) {
+      number = 0;
+    } else if (number < 0) {
+      number = slideList.length - 1;
+    }
+    image.src = slideList[number];
+    changeDots();
+    indexInterval = setInterval(changeSlide, time);
   }
 };
 
