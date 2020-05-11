@@ -1,12 +1,32 @@
-const el = document.querySelector(".slider");
-const dots = document.querySelectorAll(".dots span");
-let number = Math.floor(Math.random() * 5) + 1;
+const slideList = [
+  "img/img0.jpg",
+  "img/img1.jpg",
+  "img/img2.jpg",
+  "img/img3.jpg",
+  "img/img4.jpg",
+];
+
+const dots = [...document.querySelectorAll(".slider__dots .slider__dot")];
+const image = document.querySelector(".slider__img");
+
+const time = 3000;
+let number = 0;
+const changeDots = () => {
+  const activeDots = dots.findIndex((dot) =>
+    dot.classList.contains("slider__dot--active")
+  );
+  console.log(activeDots);
+  console.log(number);
+  dots[activeDots].classList.remove("slider__dot--active");
+  dots[number].classList.add("slider__dot--active");
+};
 
 function changeSlide() {
   number++;
-  if (number > 5) number = 1;
-  let file = `<img class="slider__img" src="img/img${number}.jpg">`;
-  el.innerHTML = file;
-  console.log(file);
-  setTimeout("changeSlide()", 3000);
+  if (number > slideList.length - 1) {
+    number = 0;
+  }
+  image.src = slideList[number];
+  changeDots();
 }
+setInterval(changeSlide, time);
