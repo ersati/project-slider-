@@ -37,3 +37,29 @@
   background-color: white;
   border: 3px solid white;
 }
+
+.slider__arrows {
+  position: absolute;
+  width: 40%;
+  background-color: black;
+}
+
+.slider__leftArrow,
+.slider__rightArrow {
+  color: white;
+  background-color: rgba(24, 24, 24, 0.8);
+  margin: 10px;
+  padding: 5px 20px;
+  font-size: 5vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider__leftArrow {
+  left: 0;
+}
+
+.slider__rightArrow {
+  right: 0;
+}

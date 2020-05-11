@@ -8,15 +8,16 @@ const slideList = [
 
 const dots = [...document.querySelectorAll(".slider__dots .slider__dot")];
 const image = document.querySelector(".slider__img");
+const sliderLeftArrow = document.querySelector(".slider__leftArrow");
+const sliderRightArrow = document.querySelector(".slider__rightArrow");
 
 const time = 3000;
 let number = 0;
+
 const changeDots = () => {
   const activeDots = dots.findIndex((dot) =>
     dot.classList.contains("slider__dot--active")
   );
-  console.log(activeDots);
-  console.log(number);
   dots[activeDots].classList.remove("slider__dot--active");
   dots[number].classList.add("slider__dot--active");
 };
@@ -29,4 +30,13 @@ function changeSlide() {
   image.src = slideList[number];
   changeDots();
 }
-setInterval(changeSlide, time);
+
+let indexInterval = setInterval(changeSlide, time);
+
+const clickSlideChange = (e) => {
+  if (e.target == sliderLeftArrow) {
+    console.log(e.target);
+  }
+};
+
+window.addEventListener("click", clickSlideChange);
