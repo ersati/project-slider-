@@ -91,3 +91,13 @@
   font-weight: bold;
   color: white;
 }
+
+@media only screen and (min-width: 200px) and (max-width: 900px) {
+  .slider__h1 {
+    font-size: 5vh;
+  }
+
+  .slider__img {
+    width: 40vh;
+  }
+}
