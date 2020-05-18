@@ -100,4 +100,11 @@
   .slider__img {
     width: 40vh;
   }
+
+  .slider__dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    font-size: 10px;
+  }
 }
