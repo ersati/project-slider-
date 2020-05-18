@@ -4,8 +4,9 @@
 }
 
 .slider {
-  background-color: rgba(243, 223, 168, 0.3);
+  background: linear-gradient(0.15turn, #88eb8d, #9198e5);
   padding: 10px 0 50px;
+  height: 92vh;
 }
 
 .slider__h1 {
@@ -44,11 +45,14 @@
   width: 20px;
   height: 20px;
   margin: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .slider__dot--active {
   background-color: white;
   border: 3px solid white;
+  font-weight: bold;
 }
 
 .slider__arrows {
@@ -67,12 +71,23 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .slider__leftArrow {
   left: 0;
 }
 
+
+
+
+
 .slider__rightArrow {
   right: 0;
+}
+
+.slider__leftArrow:hover,
+.slider__rightArrow:hover {
+  font-weight: bold;
+  color: white;
 }
